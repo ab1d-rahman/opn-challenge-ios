@@ -8,7 +8,15 @@
 import Foundation
 
 class CharitiesViewModel {
+    private let charitiesService: CharitiesService
+
+    init(charitiesService: CharitiesService) {
+        self.charitiesService = charitiesService
+    }
 
     public func fetchCharities() {
+        self.charitiesService.fetchCharities { (charities) in
+            debugPrint(charities)
+        }
     }
 }
