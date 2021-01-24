@@ -12,4 +12,8 @@ public struct Constants {
     public struct EndPoints {
         static let charitiesList = "charities"
     }
+
+    public struct NamedAssets {
+        static let charityLogoPlaceholder = "charity-logo-placeholder"
+    }
 }
