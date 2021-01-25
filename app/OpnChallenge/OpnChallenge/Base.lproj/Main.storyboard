@@ -34,7 +34,7 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-Ug-EsX">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-Ug-EsX" customClass="AnimatedImageView" customModule="Kingfisher">
                                                     <rect key="frame" x="16" y="16" width="165.5" height="102.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zjE-Ug-EsX" secondAttribute="height" multiplier="450:277" id="pqH-9m-d23"/>
