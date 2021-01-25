@@ -9,13 +9,16 @@ import UIKit
 
 class CharitiesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var errorMessageLabel: UILabel!
+    
     private let viewModel = CharitiesViewModel(charitiesService: CharitiesService(httpClient: HTTPClient()))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupTableView()
+
+        self.errorMessageLabel.isHidden = true
 
         self.viewModel.delegate = self
         self.viewModel.fetchCharities()
@@ -46,8 +49,15 @@ extension CharitiesViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension CharitiesViewController: CharitiesViewModelDelegate {
-    func didFetchCharities() {
+    func didFinishFetchingCharities(errorMessage: String?) {
         DispatchQueue.main.async { [weak self] in
+            if let erroMessage = errorMessage {
+                self?.errorMessageLabel.text = erroMessage
+                self?.errorMessageLabel.isHidden = false
+
+                return
+            }
+
             self?.tableView.reloadData()
         }
     }

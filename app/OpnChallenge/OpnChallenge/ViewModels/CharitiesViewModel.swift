@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CharitiesViewModelDelegate: NSObjectProtocol {
-    func didFetchCharities()
+    func didFinishFetchingCharities(errorMessage: String?)
 }
 
 class CharitiesViewModel {
@@ -24,13 +24,15 @@ class CharitiesViewModel {
 
     public func fetchCharities() {
         self.charitiesService.fetchCharities { (charities, error) in
-            guard let charities = charities, error == nil else {
-                debugPrint(error)
+            if let error = error {
+                self.delegate?.didFinishFetchingCharities(errorMessage: error.errorMessage)
                 return
             }
 
-            self.cellViewModels = charities.map({ CharitiesCellViewModel(model: $0) })
-            self.delegate?.didFetchCharities()
+            if let charities = charities {
+                self.cellViewModels = charities.map({ CharitiesCellViewModel(model: $0) })
+                self.delegate?.didFinishFetchingCharities(errorMessage: nil)
+            }
         }
     }
 

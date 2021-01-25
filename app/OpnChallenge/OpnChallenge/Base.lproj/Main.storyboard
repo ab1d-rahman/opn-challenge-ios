@@ -58,18 +58,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLe-dF-E7m">
+                                <rect key="frame" x="16" y="465.5" width="382" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zT9-Tz-BDT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7G8-Kb-vgs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zT9-Tz-BDT" secondAttribute="bottom" id="aOZ-Js-ghF"/>
+                            <constraint firstItem="XLe-dF-E7m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bao-I3-aOT"/>
                             <constraint firstItem="zT9-Tz-BDT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fg5-1v-nQT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zT9-Tz-BDT" secondAttribute="trailing" id="ndh-eC-mNh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XLe-dF-E7m" secondAttribute="trailing" constant="16" id="rtT-ZH-vdL"/>
+                            <constraint firstItem="XLe-dF-E7m" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="t2X-jt-FVo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Charities" id="xmT-wC-wVj"/>
                     <connections>
+                        <outlet property="errorMessageLabel" destination="XLe-dF-E7m" id="tc9-2j-5cL"/>
                         <outlet property="tableView" destination="zT9-Tz-BDT" id="DUd-j7-PRa"/>
                     </connections>
                 </viewController>
