@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		8141AD2E25BD820000523BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141AD2D25BD820000523BC0 /* AppDelegate.swift */; };
-		8141AD3225BD820000523BC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141AD3125BD820000523BC0 /* ViewController.swift */; };
 		8141AD3525BD820000523BC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3325BD820000523BC0 /* Main.storyboard */; };
 		8141AD3725BD820000523BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3625BD820000523BC0 /* Assets.xcassets */; };
 		8141AD3A25BD820000523BC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3825BD820000523BC0 /* LaunchScreen.storyboard */; };
+		81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */; };
+		81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8141AD2A25BD820000523BC0 /* OpnChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpnChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8141AD2D25BD820000523BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8141AD3125BD820000523BC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8141AD3425BD820000523BC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8141AD3625BD820000523BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8141AD3925BD820000523BC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8141AD3B25BD820000523BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewController.swift; sourceTree = "<group>"; };
+		81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		8141AD2C25BD820000523BC0 /* OpnChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				81C52E5425BDA17D00B91F8F /* ViewModels */,
+				81C52E4B25BD9F2400B91F8F /* ViewControllers */,
 				8141AD2D25BD820000523BC0 /* AppDelegate.swift */,
-				8141AD3125BD820000523BC0 /* ViewController.swift */,
 				8141AD3325BD820000523BC0 /* Main.storyboard */,
 				8141AD3625BD820000523BC0 /* Assets.xcassets */,
 				8141AD3825BD820000523BC0 /* LaunchScreen.storyboard */,
 				8141AD3B25BD820000523BC0 /* Info.plist */,
 			);
 			path = OpnChallenge;
+			sourceTree = "<group>";
+		};
+		81C52E4B25BD9F2400B91F8F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		81C52E5425BDA17D00B91F8F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8141AD3225BD820000523BC0 /* ViewController.swift in Sources */,
 				8141AD2E25BD820000523BC0 /* AppDelegate.swift in Sources */,
+				81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */,
+				81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
