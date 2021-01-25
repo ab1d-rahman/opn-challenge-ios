@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		8141AD3525BD820000523BC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3325BD820000523BC0 /* Main.storyboard */; };
 		8141AD3725BD820000523BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3625BD820000523BC0 /* Assets.xcassets */; };
 		8141AD3A25BD820000523BC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3825BD820000523BC0 /* LaunchScreen.storyboard */; };
+		817903FC25BE11B8000CD245 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817903FB25BE11B8000CD245 /* HTTPClientError.swift */; };
 		81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */; };
 		81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */; };
 		81C52E6525BDACC600B91F8F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E6425BDACC600B91F8F /* HTTPClient.swift */; };
@@ -33,6 +34,7 @@
 		8141AD3625BD820000523BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8141AD3925BD820000523BC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8141AD3B25BD820000523BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		817903FB25BE11B8000CD245 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 		81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewController.swift; sourceTree = "<group>"; };
 		81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
 		81C52E6425BDACC600B91F8F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -62,7 +64,6 @@
 				4531CC022E1066E6D5517E05 /* Pods-OpnChallenge.debug.xcconfig */,
 				77A2D675DB020AEBD10A7B2B /* Pods-OpnChallenge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -125,6 +126,7 @@
 			children = (
 				81C52E6425BDACC600B91F8F /* HTTPClient.swift */,
 				81C52E7625BDC19600B91F8F /* URLResolver.swift */,
+				817903FB25BE11B8000CD245 /* HTTPClientError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -292,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8141AD2E25BD820000523BC0 /* AppDelegate.swift in Sources */,
+				817903FC25BE11B8000CD245 /* HTTPClientError.swift in Sources */,
 				81C52E7725BDC19600B91F8F /* URLResolver.swift in Sources */,
 				81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */,
 				81C52E7F25BDCFB700B91F8F /* CharitiesCellViewModel.swift in Sources */,

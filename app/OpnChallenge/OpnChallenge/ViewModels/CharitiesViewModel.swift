@@ -23,8 +23,9 @@ class CharitiesViewModel {
     }
 
     public func fetchCharities() {
-        self.charitiesService.fetchCharities { (charities) in
-            guard let charities = charities else {
+        self.charitiesService.fetchCharities { (charities, error) in
+            guard let charities = charities, error == nil else {
+                debugPrint(error)
                 return
             }
 
