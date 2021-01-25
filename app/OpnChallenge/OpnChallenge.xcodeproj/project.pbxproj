@@ -12,6 +12,8 @@
 		8141AD3525BD820000523BC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3325BD820000523BC0 /* Main.storyboard */; };
 		8141AD3725BD820000523BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3625BD820000523BC0 /* Assets.xcassets */; };
 		8141AD3A25BD820000523BC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3825BD820000523BC0 /* LaunchScreen.storyboard */; };
+		814BB21325BF0F7600B8ABF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814BB21225BF0F7600B8ABF8 /* Localizable.strings */; };
+		814BB21725BF10C500B8ABF8 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BB21625BF10C500B8ABF8 /* String+Localization.swift */; };
 		817903FC25BE11B8000CD245 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817903FB25BE11B8000CD245 /* HTTPClientError.swift */; };
 		81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */; };
 		81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */; };
@@ -34,6 +36,8 @@
 		8141AD3625BD820000523BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8141AD3925BD820000523BC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8141AD3B25BD820000523BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		814BB21225BF0F7600B8ABF8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		814BB21625BF10C500B8ABF8 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		817903FB25BE11B8000CD245 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 		81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewController.swift; sourceTree = "<group>"; };
 		81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		8141AD2C25BD820000523BC0 /* OpnChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				814BB21525BF106E00B8ABF8 /* Extensions */,
 				81C52E7125BDB0A900B91F8F /* Models */,
 				81C52E6C25BDAFB300B91F8F /* Constants */,
 				81C52E6725BDAF4000B91F8F /* Services */,
@@ -100,8 +105,17 @@
 				8141AD3625BD820000523BC0 /* Assets.xcassets */,
 				8141AD3825BD820000523BC0 /* LaunchScreen.storyboard */,
 				8141AD3B25BD820000523BC0 /* Info.plist */,
+				814BB21225BF0F7600B8ABF8 /* Localizable.strings */,
 			);
 			path = OpnChallenge;
+			sourceTree = "<group>";
+		};
+		814BB21525BF106E00B8ABF8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				814BB21625BF10C500B8ABF8 /* String+Localization.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		81C52E4B25BD9F2400B91F8F /* ViewControllers */ = {
@@ -239,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8141AD3A25BD820000523BC0 /* LaunchScreen.storyboard in Resources */,
+				814BB21325BF0F7600B8ABF8 /* Localizable.strings in Resources */,
 				8141AD3725BD820000523BC0 /* Assets.xcassets in Resources */,
 				8141AD3525BD820000523BC0 /* Main.storyboard in Resources */,
 			);
@@ -296,6 +311,7 @@
 				8141AD2E25BD820000523BC0 /* AppDelegate.swift in Sources */,
 				817903FC25BE11B8000CD245 /* HTTPClientError.swift in Sources */,
 				81C52E7725BDC19600B91F8F /* URLResolver.swift in Sources */,
+				814BB21725BF10C500B8ABF8 /* String+Localization.swift in Sources */,
 				81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */,
 				81C52E7F25BDCFB700B91F8F /* CharitiesCellViewModel.swift in Sources */,
 				81C52E6E25BDAFC100B91F8F /* Constats.swift in Sources */,

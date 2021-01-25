@@ -22,17 +22,17 @@ public struct HTTPClientError: Error {
     var errorMessage: String {
         switch self.errorType {
         case .noInternetConnection:
-            return "Could not connect to server. Please check your internet connection."
+            return "No internet error message".localized
         case .serverUnreachable:
-            return "Server unreachable. Please try again later."
+            return "Server unreachable error message".localized
         case .errorResponse(let statusCode):
             if statusCode == 500 {
-                return "Server Error. Please try again later."
+                return "Server error message".localized
             }
 
-            return "Something went wrong. Please try again later."
+            return "Something went wrong message".localized
         default:
-            return "Something went wrong. Please try again later."
+            return "Something went wrong message".localized
         }
     }
 }
