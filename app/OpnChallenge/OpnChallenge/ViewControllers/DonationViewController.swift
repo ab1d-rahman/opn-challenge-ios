@@ -10,13 +10,19 @@ import OmiseSDK
 
 class DonationViewController: UIViewController {
     @IBOutlet weak var charityNameLabel: UILabel!
+    @IBOutlet weak var donorNameTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
 
     var charityName: String?
+
+    private let viewModel = DonationViewModel(charitiesService: CharitiesService(httpClient: HTTPClient()))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.charityNameLabel.text = self.charityName
+
+        self.viewModel.delegate = self
     }
 
     @IBAction func donatePressed(_ sender: Any) {
@@ -34,7 +40,7 @@ class DonationViewController: UIViewController {
 
 extension DonationViewController: CreditCardFormViewControllerDelegate {
     func creditCardFormViewController(_ controller: CreditCardFormViewController, didSucceedWithToken token: Token) {
-        print(token)
+        self.viewModel.makeDonation(usingName: self.donorNameTextField.text!, usingAmount: Int(self.amountTextField.text!)!, usingCreditCardToken: token.id)
     }
 
     func creditCardFormViewController(_ controller: CreditCardFormViewController, didFailWithError error: Error) {
@@ -43,5 +49,16 @@ extension DonationViewController: CreditCardFormViewControllerDelegate {
 
     func creditCardFormViewControllerDidCancel(_ controller: CreditCardFormViewController) {
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension DonationViewController: DonationViewModelDelegate {
+    func didFinishMakingDonation(errorMessage: String?) {
+        if let errorMessage = errorMessage {
+            print(errorMessage)
+            return
+        }
+
+        print("SUCCESS")
     }
 }

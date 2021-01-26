@@ -18,6 +18,9 @@
 		814BB22025BFE36E00B8ABF8 /* OmiseSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 814BB21A25BFE35C00B8ABF8 /* OmiseSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		817903FC25BE11B8000CD245 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817903FB25BE11B8000CD245 /* HTTPClientError.swift */; };
 		8185011925C04FA800436315 /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185011825C04FA800436315 /* DonationViewController.swift */; };
+		8185011B25C089C300436315 /* MakeDonationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185011A25C089C300436315 /* MakeDonationRequestModel.swift */; };
+		8185011D25C08B5F00436315 /* MakeDonationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185011C25C08B5F00436315 /* MakeDonationResponseModel.swift */; };
+		8185011F25C0A3F500436315 /* DonationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185011E25C0A3F500436315 /* DonationViewModel.swift */; };
 		81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */; };
 		81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */; };
 		81C52E6525BDACC600B91F8F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E6425BDACC600B91F8F /* HTTPClient.swift */; };
@@ -58,6 +61,9 @@
 		814BB21A25BFE35C00B8ABF8 /* OmiseSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OmiseSDK.framework; path = Carthage/Build/iOS/OmiseSDK.framework; sourceTree = "<group>"; };
 		817903FB25BE11B8000CD245 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 		8185011825C04FA800436315 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
+		8185011A25C089C300436315 /* MakeDonationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDonationRequestModel.swift; sourceTree = "<group>"; };
+		8185011C25C08B5F00436315 /* MakeDonationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDonationResponseModel.swift; sourceTree = "<group>"; };
+		8185011E25C0A3F500436315 /* DonationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewModel.swift; sourceTree = "<group>"; };
 		81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewController.swift; sourceTree = "<group>"; };
 		81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
 		81C52E6425BDACC600B91F8F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			children = (
 				81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */,
 				81C52E7E25BDCFB700B91F8F /* CharitiesCellViewModel.swift */,
+				8185011E25C0A3F500436315 /* DonationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -186,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				81C52E7225BDB14D00B91F8F /* Charity.swift */,
+				8185011A25C089C300436315 /* MakeDonationRequestModel.swift */,
+				8185011C25C08B5F00436315 /* MakeDonationResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,12 +363,15 @@
 				8141AD2E25BD820000523BC0 /* AppDelegate.swift in Sources */,
 				817903FC25BE11B8000CD245 /* HTTPClientError.swift in Sources */,
 				81C52E7725BDC19600B91F8F /* URLResolver.swift in Sources */,
+				8185011B25C089C300436315 /* MakeDonationRequestModel.swift in Sources */,
 				8185011925C04FA800436315 /* DonationViewController.swift in Sources */,
 				814BB21725BF10C500B8ABF8 /* String+Localization.swift in Sources */,
 				81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */,
 				81C52E7F25BDCFB700B91F8F /* CharitiesCellViewModel.swift in Sources */,
 				81C52E6E25BDAFC100B91F8F /* Constats.swift in Sources */,
 				81C52E7325BDB14D00B91F8F /* Charity.swift in Sources */,
+				8185011F25C0A3F500436315 /* DonationViewModel.swift in Sources */,
+				8185011D25C08B5F00436315 /* MakeDonationResponseModel.swift in Sources */,
 				81C52E7C25BDCDCE00B91F8F /* CharitiesTableViewCell.swift in Sources */,
 				81C52E6525BDACC600B91F8F /* HTTPClient.swift in Sources */,
 				81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */,

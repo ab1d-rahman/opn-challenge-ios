@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum HTTPClientErrorType: Error {
+public enum HTTPClientErrorType {
     case parsingJSON
     case noInternetConnection
     case serverUnreachable
@@ -26,7 +26,7 @@ public struct HTTPClientError: Error {
         case .serverUnreachable:
             return "Server unreachable error message".localized
         case .errorResponse(let statusCode):
-            if statusCode == 500 {
+            if statusCode == Constants.HTTPStatusCodes.serverError {
                 return "Server error message".localized
             }
 

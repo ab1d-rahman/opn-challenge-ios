@@ -14,6 +14,19 @@ public class HTTPClient {
         var urlRequest = URLRequest(url: requestURL)
         urlRequest.httpMethod = "GET"
 
+        self.makeRequest(with: urlRequest, responseModelType: responseModelType, completion: completion)
+    }
+
+    public func postRequest<T: Decodable>(requestURL: URL, requestBodyData: Data, responseModelType: T.Type, completion: @escaping (Result<Success<T>, HTTPClientError>) -> Void) {
+        var urlRequest = URLRequest(url: requestURL)
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = requestBodyData
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+
+        self.makeRequest(with: urlRequest, responseModelType: responseModelType, completion: completion)
+    }
+
+    private func makeRequest<T: Decodable>(with urlRequest: URLRequest, responseModelType: T.Type, completion: @escaping (Result<Success<T>, HTTPClientError>) -> Void) {
         URLSession.shared.dataTask(with: urlRequest) { (data, httpResponse, error) in
             let statusCode = (httpResponse as? HTTPURLResponse)?.statusCode
 

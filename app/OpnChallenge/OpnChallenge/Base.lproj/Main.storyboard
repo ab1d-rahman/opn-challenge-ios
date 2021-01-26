@@ -171,7 +171,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Make Donation" id="Bt9-QT-sYa"/>
                     <connections>
+                        <outlet property="amountTextField" destination="J4g-TZ-36e" id="kBJ-lL-Ms5"/>
                         <outlet property="charityNameLabel" destination="xhG-Oz-XSR" id="oTs-ev-JYt"/>
+                        <outlet property="donorNameTextField" destination="iM9-9H-gBa" id="hfd-pZ-2Nz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEH-bo-Yy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
