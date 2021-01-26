@@ -28,6 +28,8 @@ class DonationViewController: UIViewController {
     }
 
     @IBAction func donatePressed(_ sender: Any) {
+        self.view.endEditing(true)
+
         self.showCreditCardFormView()
     }
 
@@ -64,7 +66,9 @@ extension DonationViewController: DonationViewModelDelegate {
             }
 
             if let errorMessage = errorMessage {
-                print(errorMessage)
+                let alert = UIAlertController.makeAlert(title: "Error".localized, message: errorMessage)
+                self.present(alert, animated: true, completion: nil)
+
                 return
             }
 
