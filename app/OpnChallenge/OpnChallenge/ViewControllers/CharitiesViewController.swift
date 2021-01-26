@@ -10,8 +10,12 @@ import UIKit
 class CharitiesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorMessageLabel: UILabel!
+
+    private let segueToDonationViewController = "ToDonationViewController"
     
     private let viewModel = CharitiesViewModel(charitiesService: CharitiesService(httpClient: HTTPClient()))
+
+    private var selectedRow: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,14 @@ class CharitiesViewController: UIViewController {
 
         self.tableView.tableFooterView = UIView()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let donationViewController = segue.destination as? DonationViewController,
+           let selectedRow = self.selectedRow {
+            let selectedCharityName = self.viewModel.getCellViewModel(at: selectedRow).name
+            donationViewController.charityName = selectedCharityName
+        }
+    }
 }
 
 extension CharitiesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -45,6 +57,13 @@ extension CharitiesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.customize(using: self.viewModel.getCellViewModel(at: indexPath.row))
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedRow = indexPath.row
+        self.performSegue(withIdentifier: self.segueToDonationViewController, sender: nil)
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

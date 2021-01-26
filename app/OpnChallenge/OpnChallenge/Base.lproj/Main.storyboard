@@ -81,11 +81,102 @@
                     <connections>
                         <outlet property="errorMessageLabel" destination="XLe-dF-E7m" id="tc9-2j-5cL"/>
                         <outlet property="tableView" destination="zT9-Tz-BDT" id="DUd-j7-PRa"/>
+                        <segue destination="M0e-yw-h7n" kind="show" identifier="ToDonationViewController" id="D37-SU-3OC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713.04347826086962" y="113.83928571428571"/>
+        </scene>
+        <!--Make Donation-->
+        <scene sceneID="Xey-yr-0QR">
+            <objects>
+                <viewController id="M0e-yw-h7n" customClass="DonationViewController" customModule="OpnChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IDi-LE-HVT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyl-xu-Q1I">
+                                <rect key="frame" x="16" y="331.5" width="382" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0z5-qj-LJM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Donate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="donatePressed:" destination="M0e-yw-h7n" eventType="touchUpInside" id="IDQ-SL-28l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-Oz-XSR">
+                                <rect key="frame" x="16" y="104" width="382" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donor's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slU-fI-2vH">
+                                <rect key="frame" x="16" y="155.5" width="98" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iM9-9H-gBa">
+                                <rect key="frame" x="16" y="179.5" width="382" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IDw-ok-S1w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-gj-u4C">
+                                <rect key="frame" x="16" y="243.5" width="54" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4g-TZ-36e">
+                                <rect key="frame" x="16" y="267.5" width="382" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lDT-rB-jfW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lDT-rB-jfW" firstAttribute="trailing" secondItem="lyl-xu-Q1I" secondAttribute="trailing" constant="16" id="110-PM-hxJ"/>
+                            <constraint firstItem="J4g-TZ-36e" firstAttribute="top" secondItem="m1S-gj-u4C" secondAttribute="bottom" constant="6" id="1RC-QZ-YIi"/>
+                            <constraint firstItem="lyl-xu-Q1I" firstAttribute="leading" secondItem="lDT-rB-jfW" secondAttribute="leading" constant="16" id="4Bs-LZ-RzT"/>
+                            <constraint firstItem="slU-fI-2vH" firstAttribute="leading" secondItem="xhG-Oz-XSR" secondAttribute="leading" id="6dM-TC-lLn"/>
+                            <constraint firstItem="lyl-xu-Q1I" firstAttribute="top" secondItem="J4g-TZ-36e" secondAttribute="bottom" constant="20" id="CyW-Sd-B2o"/>
+                            <constraint firstItem="m1S-gj-u4C" firstAttribute="top" secondItem="iM9-9H-gBa" secondAttribute="bottom" constant="20" id="DGM-WA-Dc3"/>
+                            <constraint firstItem="J4g-TZ-36e" firstAttribute="leading" secondItem="m1S-gj-u4C" secondAttribute="leading" id="G8T-nX-xyL"/>
+                            <constraint firstItem="lDT-rB-jfW" firstAttribute="trailing" secondItem="xhG-Oz-XSR" secondAttribute="trailing" constant="16" id="Jcq-oB-hsW"/>
+                            <constraint firstItem="slU-fI-2vH" firstAttribute="top" secondItem="xhG-Oz-XSR" secondAttribute="bottom" constant="30" id="OOd-xO-M5n"/>
+                            <constraint firstItem="iM9-9H-gBa" firstAttribute="top" secondItem="slU-fI-2vH" secondAttribute="bottom" constant="6" id="VKR-rQ-1sc"/>
+                            <constraint firstItem="m1S-gj-u4C" firstAttribute="leading" secondItem="iM9-9H-gBa" secondAttribute="leading" id="Wyf-4l-OJL"/>
+                            <constraint firstItem="xhG-Oz-XSR" firstAttribute="leading" secondItem="lDT-rB-jfW" secondAttribute="leading" constant="16" id="Yk7-pb-n9p"/>
+                            <constraint firstItem="lDT-rB-jfW" firstAttribute="trailing" secondItem="iM9-9H-gBa" secondAttribute="trailing" constant="16" id="ZAY-Tt-32t"/>
+                            <constraint firstItem="J4g-TZ-36e" firstAttribute="height" secondItem="iM9-9H-gBa" secondAttribute="height" id="lh0-9i-jkQ"/>
+                            <constraint firstItem="J4g-TZ-36e" firstAttribute="trailing" secondItem="iM9-9H-gBa" secondAttribute="trailing" id="m8O-96-7l4"/>
+                            <constraint firstItem="xhG-Oz-XSR" firstAttribute="top" secondItem="lDT-rB-jfW" secondAttribute="top" constant="16" id="nHb-Sj-BEv"/>
+                            <constraint firstItem="iM9-9H-gBa" firstAttribute="leading" secondItem="slU-fI-2vH" secondAttribute="leading" id="xdg-17-Ly9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Make Donation" id="Bt9-QT-sYa"/>
+                    <connections>
+                        <outlet property="charityNameLabel" destination="xhG-Oz-XSR" id="oTs-ev-JYt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEH-bo-Yy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1571" y="114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CzX-AP-P4m">
@@ -109,6 +200,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

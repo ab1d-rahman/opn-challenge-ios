@@ -16,4 +16,8 @@ public struct Constants {
     public struct NamedAssets {
         static let charityLogoPlaceholder = "charity-logo-placeholder"
     }
+
+    public struct Keys {
+        static let omisePublicKey = "pkey_test_5mm2u7jwdup648coz7n"
+    }
 }
