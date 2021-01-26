@@ -14,6 +14,8 @@
 		8141AD3A25BD820000523BC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8141AD3825BD820000523BC0 /* LaunchScreen.storyboard */; };
 		814BB21325BF0F7600B8ABF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814BB21225BF0F7600B8ABF8 /* Localizable.strings */; };
 		814BB21725BF10C500B8ABF8 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BB21625BF10C500B8ABF8 /* String+Localization.swift */; };
+		814BB21F25BFE36E00B8ABF8 /* OmiseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814BB21A25BFE35C00B8ABF8 /* OmiseSDK.framework */; };
+		814BB22025BFE36E00B8ABF8 /* OmiseSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 814BB21A25BFE35C00B8ABF8 /* OmiseSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		817903FC25BE11B8000CD245 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817903FB25BE11B8000CD245 /* HTTPClientError.swift */; };
 		81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */; };
 		81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */; };
@@ -25,6 +27,20 @@
 		81C52E7C25BDCDCE00B91F8F /* CharitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E7B25BDCDCE00B91F8F /* CharitiesTableViewCell.swift */; };
 		81C52E7F25BDCFB700B91F8F /* CharitiesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E7E25BDCFB700B91F8F /* CharitiesCellViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		814BB22125BFE36E00B8ABF8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				814BB22025BFE36E00B8ABF8 /* OmiseSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4531CC022E1066E6D5517E05 /* Pods-OpnChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpnChallenge.debug.xcconfig"; path = "Target Support Files/Pods-OpnChallenge/Pods-OpnChallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -38,6 +54,7 @@
 		8141AD3B25BD820000523BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		814BB21225BF0F7600B8ABF8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		814BB21625BF10C500B8ABF8 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		814BB21A25BFE35C00B8ABF8 /* OmiseSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OmiseSDK.framework; path = Carthage/Build/iOS/OmiseSDK.framework; sourceTree = "<group>"; };
 		817903FB25BE11B8000CD245 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 		81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewController.swift; sourceTree = "<group>"; };
 		81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
@@ -56,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119D2418D0D11F244AD9ACEB /* Pods_OpnChallenge.framework in Frameworks */,
+				814BB21F25BFE36E00B8ABF8 /* OmiseSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +206,7 @@
 		C71F339BF96CF1CCB45F8CC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				814BB21A25BFE35C00B8ABF8 /* OmiseSDK.framework */,
 				515ED920436C30F5D6E9A090 /* Pods_OpnChallenge.framework */,
 			);
 			name = Frameworks;
@@ -205,6 +224,8 @@
 				8141AD2725BD820000523BC0 /* Frameworks */,
 				8141AD2825BD820000523BC0 /* Resources */,
 				ADA44C5E2516BC2ED4CC0401 /* [CP] Embed Pods Frameworks */,
+				814BB22125BFE36E00B8ABF8 /* Embed Frameworks */,
+				814BB22225BFE4EA00B8ABF8 /* Carthage Run Script */,
 			);
 			buildRules = (
 			);
@@ -262,6 +283,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		814BB22225BFE4EA00B8ABF8 /* Carthage Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/OmiseSDK.framework",
+			);
+			name = "Carthage Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		ADA44C5E2516BC2ED4CC0401 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -469,6 +509,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RS29XNDB6R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OpnChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,6 +533,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RS29XNDB6R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OpnChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
