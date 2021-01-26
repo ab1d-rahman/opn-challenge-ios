@@ -8,6 +8,7 @@
 import Foundation
 
 protocol DonationViewModelDelegate: NSObjectProtocol {
+    func didStartMakingDonation()
     func didFinishMakingDonation(errorMessage: String?)
 }
 
@@ -21,6 +22,8 @@ class DonationViewModel {
     }
 
     public func makeDonation(usingName name: String, usingAmount amount: Int, usingCreditCardToken token: String) {
+        self.delegate?.didStartMakingDonation()
+
         self.charitiesService.makeDonation(usingName: name, usingAmount: amount, usingCreditCardToken: token) { (responseObject, error) in
             if let error = error {
                 self.delegate?.didFinishMakingDonation(errorMessage: error.errorMessage)

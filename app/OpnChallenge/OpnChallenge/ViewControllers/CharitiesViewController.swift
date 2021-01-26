@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class CharitiesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -68,8 +69,14 @@ extension CharitiesViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension CharitiesViewController: CharitiesViewModelDelegate {
+    func didStartFetchingCharities() {
+        SVProgressHUD.show()
+    }
+
     func didFinishFetchingCharities(errorMessage: String?) {
         DispatchQueue.main.async { [weak self] in
+            SVProgressHUD.dismiss()
+
             if let erroMessage = errorMessage {
                 self?.errorMessageLabel.text = erroMessage
                 self?.errorMessageLabel.isHidden = false

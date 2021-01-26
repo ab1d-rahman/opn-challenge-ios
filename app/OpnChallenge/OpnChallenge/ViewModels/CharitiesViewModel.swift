@@ -8,6 +8,7 @@
 import Foundation
 
 protocol CharitiesViewModelDelegate: NSObjectProtocol {
+    func didStartFetchingCharities()
     func didFinishFetchingCharities(errorMessage: String?)
 }
 
@@ -23,6 +24,8 @@ class CharitiesViewModel {
     }
 
     public func fetchCharities() {
+        self.delegate?.didStartFetchingCharities()
+
         self.charitiesService.fetchCharities { (charities, error) in
             if let error = error {
                 self.delegate?.didFinishFetchingCharities(errorMessage: error.errorMessage)

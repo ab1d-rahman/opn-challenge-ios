@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        self.setupSVProgressHUD()
+
         return true
+    }
+
+    private func setupSVProgressHUD() {
+        SVProgressHUD.setDefaultMaskType(.clear)
     }
 }
 

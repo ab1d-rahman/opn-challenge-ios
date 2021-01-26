@@ -7,6 +7,7 @@
 
 import UIKit
 import OmiseSDK
+import SVProgressHUD
 
 class DonationViewController: UIViewController {
     @IBOutlet weak var charityNameLabel: UILabel!
@@ -59,8 +60,14 @@ extension DonationViewController: CreditCardFormViewControllerDelegate {
 }
 
 extension DonationViewController: DonationViewModelDelegate {
+    func didStartMakingDonation() {
+        SVProgressHUD.show()
+    }
+
     func didFinishMakingDonation(errorMessage: String?) {
         DispatchQueue.main.async { [weak self] in
+            SVProgressHUD.dismiss()
+
             guard let self = self else {
                 return
             }
