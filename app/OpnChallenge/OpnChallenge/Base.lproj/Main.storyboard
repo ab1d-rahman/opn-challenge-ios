@@ -96,25 +96,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyl-xu-Q1I">
-                                <rect key="frame" x="16" y="331.5" width="382" height="44"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="0z5-qj-LJM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Donate">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="donatePressed:" destination="M0e-yw-h7n" eventType="touchUpInside" id="IDQ-SL-28l"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-Oz-XSR">
                                 <rect key="frame" x="16" y="104" width="382" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -135,17 +116,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4g-TZ-36e">
+                                <rect key="frame" x="16" y="267.5" width="382" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-gj-u4C">
                                 <rect key="frame" x="16" y="243.5" width="54" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4g-TZ-36e">
-                                <rect key="frame" x="16" y="267.5" width="382" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyl-xu-Q1I">
+                                <rect key="frame" x="16" y="331.5" width="382" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0z5-qj-LJM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Donate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="donatePressed:" destination="M0e-yw-h7n" eventType="touchUpInside" id="IDQ-SL-28l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lDT-rB-jfW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -174,11 +174,72 @@
                         <outlet property="amountTextField" destination="J4g-TZ-36e" id="kBJ-lL-Ms5"/>
                         <outlet property="charityNameLabel" destination="xhG-Oz-XSR" id="oTs-ev-JYt"/>
                         <outlet property="donorNameTextField" destination="iM9-9H-gBa" id="hfd-pZ-2Nz"/>
+                        <segue destination="4L7-Bb-zut" kind="show" identifier="ToDonationSuccessViewController" id="aSh-q3-ghP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEH-bo-Yy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1571" y="114"/>
+        </scene>
+        <!--Donation Success View Controller-->
+        <scene sceneID="qXU-Y8-wWn">
+            <objects>
+                <viewController id="4L7-Bb-zut" customClass="DonationSuccessViewController" customModule="OpnChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TS9-Av-vnf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success-tick" translatesAutoresizingMaskIntoConstraints="NO" id="bxY-2e-8eS">
+                                <rect key="frame" x="142" y="410" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bxY-2e-8eS" secondAttribute="height" multiplier="1:1" id="ANZ-ME-p4A"/>
+                                    <constraint firstAttribute="width" constant="130" id="HAt-rl-ys7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmU-gC-v7t">
+                                <rect key="frame" x="16" y="802" width="382" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0HR-bt-oAg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Go Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goHomePressed:" destination="4L7-Bb-zut" eventType="touchUpInside" id="cfz-X1-fgS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donation Successful" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gud-Bh-Jbo">
+                                <rect key="frame" x="16" y="546" width="382" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HDY-NS-X6k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JmU-gC-v7t" firstAttribute="leading" secondItem="HDY-NS-X6k" secondAttribute="leading" constant="16" id="2Mv-MS-ULH"/>
+                            <constraint firstItem="bxY-2e-8eS" firstAttribute="centerY" secondItem="HDY-NS-X6k" secondAttribute="centerY" id="Dzx-sG-OAW"/>
+                            <constraint firstItem="HDY-NS-X6k" firstAttribute="trailing" secondItem="Gud-Bh-Jbo" secondAttribute="trailing" constant="16" id="Tlb-nI-3oP"/>
+                            <constraint firstItem="HDY-NS-X6k" firstAttribute="bottom" secondItem="JmU-gC-v7t" secondAttribute="bottom" constant="16" id="YZ2-9N-uGN"/>
+                            <constraint firstItem="Gud-Bh-Jbo" firstAttribute="leading" secondItem="HDY-NS-X6k" secondAttribute="leading" constant="16" id="edM-2Q-28T"/>
+                            <constraint firstItem="Gud-Bh-Jbo" firstAttribute="top" secondItem="bxY-2e-8eS" secondAttribute="bottom" constant="6" id="nkf-xb-2d5"/>
+                            <constraint firstItem="HDY-NS-X6k" firstAttribute="trailing" secondItem="JmU-gC-v7t" secondAttribute="trailing" constant="16" id="p7Q-47-uGs"/>
+                            <constraint firstItem="bxY-2e-8eS" firstAttribute="centerX" secondItem="HDY-NS-X6k" secondAttribute="centerX" id="pZY-K2-kh5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cwe-9O-JaK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFA-Xq-72U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2467" y="114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CzX-AP-P4m">
@@ -200,6 +261,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="success-tick" width="170.66667175292969" height="170.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

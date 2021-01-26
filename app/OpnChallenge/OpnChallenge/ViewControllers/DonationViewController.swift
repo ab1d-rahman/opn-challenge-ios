@@ -17,6 +17,8 @@ class DonationViewController: UIViewController {
 
     private let viewModel = DonationViewModel(charitiesService: CharitiesService(httpClient: HTTPClient()))
 
+    private let segueToDonationSuccessViewController = "ToDonationSuccessViewController"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +42,9 @@ class DonationViewController: UIViewController {
 
 extension DonationViewController: CreditCardFormViewControllerDelegate {
     func creditCardFormViewController(_ controller: CreditCardFormViewController, didSucceedWithToken token: Token) {
-        self.viewModel.makeDonation(usingName: self.donorNameTextField.text!, usingAmount: Int(self.amountTextField.text!)!, usingCreditCardToken: token.id)
+        controller.dismiss(animated: true) { [unowned self] in
+            self.viewModel.makeDonation(usingName: self.donorNameTextField.text!, usingAmount: Int(self.amountTextField.text!)!, usingCreditCardToken: token.id)
+        }
     }
 
     func creditCardFormViewController(_ controller: CreditCardFormViewController, didFailWithError error: Error) {
@@ -54,11 +58,17 @@ extension DonationViewController: CreditCardFormViewControllerDelegate {
 
 extension DonationViewController: DonationViewModelDelegate {
     func didFinishMakingDonation(errorMessage: String?) {
-        if let errorMessage = errorMessage {
-            print(errorMessage)
-            return
-        }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
 
-        print("SUCCESS")
+            if let errorMessage = errorMessage {
+                print(errorMessage)
+                return
+            }
+
+            self.performSegue(withIdentifier: self.segueToDonationSuccessViewController, sender: nil)
+        }
     }
 }
