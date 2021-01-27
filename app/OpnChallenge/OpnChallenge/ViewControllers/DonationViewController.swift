@@ -27,6 +27,7 @@ class DonationViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupInputValidation()
+        self.setupTapGestureForHidingKeyboard()
 
         self.charityNameLabel.text = self.charityName
 
@@ -54,6 +55,11 @@ class DonationViewController: UIViewController {
         self.amountTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
     }
 
+    private func setupTapGestureForHidingKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+
     @objc private func textFieldsDidChange() {
         let isValidInput = self.viewModel.isValidInput(name: self.donorNameTextField.text,
                                                        amount: self.amountTextField.text)
@@ -63,7 +69,10 @@ class DonationViewController: UIViewController {
         }
 
         self.updateDonateButtonAppearance(isEnabled: isValidInput)
+    }
 
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
 
     private func updateDonateButtonAppearance(isEnabled: Bool) {
