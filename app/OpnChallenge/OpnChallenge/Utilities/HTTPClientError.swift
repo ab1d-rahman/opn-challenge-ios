@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum HTTPClientErrorType {
+public enum HTTPClientErrorType: Equatable {
     case parsingJSON
     case noInternetConnection
     case serverUnreachable

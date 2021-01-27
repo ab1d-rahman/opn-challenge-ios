@@ -10,6 +10,12 @@ import Foundation
 public class HTTPClient {
     public typealias Success<T: Decodable> = (responseObject: T?, statusCode: Int?)
 
+    private let urlSession: URLSessionProtocol
+
+    init(urlSession: URLSessionProtocol = URLSession.shared) {
+        self.urlSession = urlSession
+    }
+
     public func getRequest<T: Decodable>(requestURL: URL, responseModelType: T.Type, completion: @escaping (Result<Success<T>, HTTPClientError>) -> Void) {
         var urlRequest = URLRequest(url: requestURL)
         urlRequest.httpMethod = "GET"
@@ -27,7 +33,7 @@ public class HTTPClient {
     }
 
     private func makeRequest<T: Decodable>(with urlRequest: URLRequest, responseModelType: T.Type, completion: @escaping (Result<Success<T>, HTTPClientError>) -> Void) {
-        URLSession.shared.dataTask(with: urlRequest) { (data, httpResponse, error) in
+        self.urlSession.dataTask(with: urlRequest) { (data, httpResponse, error) in
             let statusCode = (httpResponse as? HTTPURLResponse)?.statusCode
 
             if let error = error {
