@@ -10,7 +10,7 @@ import Foundation
 public class URLResolver {
     public static let shared = URLResolver()
 
-    private let baseURL = "http://localhost:8080/"
+    private let baseURL = "http://192.168.1.14:8080/"
 
     private init() {}
 
