@@ -10,11 +10,13 @@ import Foundation
 
 class MockCharitiesService: CharitiesServiceProtocol {
     var fetchCharitiesResponse: ([Charity]?, HTTPClientError?)!
+    var makeDonationResponse: (MakeDonationResponseModel?, HTTPClientError?)!
 
     func fetchCharities(completion: @escaping ([Charity]?, HTTPClientError?) -> Void) {
-        completion(fetchCharitiesResponse.0, fetchCharitiesResponse.1)
+        completion(self.fetchCharitiesResponse.0, self.fetchCharitiesResponse.1)
     }
 
     func makeDonation(usingName name: String, usingAmountInSatang amount: Int, usingCreditCardToken token: String, completion: @escaping (MakeDonationResponseModel?, HTTPClientError?) -> Void) {
+        completion(self.makeDonationResponse.0, self.makeDonationResponse.1)
     }
 }

@@ -25,6 +25,7 @@
 		8185012425C0BB4A00436315 /* UIAlertController+MakeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185012325C0BB4A00436315 /* UIAlertController+MakeAlert.swift */; };
 		81C0814325C19771005B2CD2 /* CharitiesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0814225C19771005B2CD2 /* CharitiesViewModelTests.swift */; };
 		81C0814825C1986C005B2CD2 /* MockCharitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0814725C1986C005B2CD2 /* MockCharitiesService.swift */; };
+		81C0815025C1B3AC005B2CD2 /* DonationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0814F25C1B3AC005B2CD2 /* DonationViewModelTests.swift */; };
 		81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */; };
 		81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */; };
 		81C52E6525BDACC600B91F8F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E6425BDACC600B91F8F /* HTTPClient.swift */; };
@@ -85,6 +86,7 @@
 		81C0813625C196CB005B2CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81C0814225C19771005B2CD2 /* CharitiesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModelTests.swift; sourceTree = "<group>"; };
 		81C0814725C1986C005B2CD2 /* MockCharitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharitiesService.swift; sourceTree = "<group>"; };
+		81C0814F25C1B3AC005B2CD2 /* DonationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewModelTests.swift; sourceTree = "<group>"; };
 		81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewController.swift; sourceTree = "<group>"; };
 		81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
 		81C52E6425BDACC600B91F8F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -181,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				81C0814625C1985D005B2CD2 /* MockServices */,
-				81C0814525C1983E005B2CD2 /* ViewModels */,
+				81C0815425C1C482005B2CD2 /* Tests */,
 				81C0813625C196CB005B2CD2 /* Info.plist */,
 			);
 			path = OpnChallengeTests;
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				81C0814225C19771005B2CD2 /* CharitiesViewModelTests.swift */,
+				81C0814F25C1B3AC005B2CD2 /* DonationViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -201,6 +204,14 @@
 				81C0814725C1986C005B2CD2 /* MockCharitiesService.swift */,
 			);
 			path = MockServices;
+			sourceTree = "<group>";
+		};
+		81C0815425C1C482005B2CD2 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				81C0814525C1983E005B2CD2 /* ViewModels */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		81C52E4B25BD9F2400B91F8F /* ViewControllers */ = {
@@ -478,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C0814825C1986C005B2CD2 /* MockCharitiesService.swift in Sources */,
+				81C0815025C1B3AC005B2CD2 /* DonationViewModelTests.swift in Sources */,
 				81C0814325C19771005B2CD2 /* CharitiesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ protocol DonationViewModelDelegate: NSObjectProtocol {
 }
 
 class DonationViewModel {
-    private let charitiesService: CharitiesService
+    private let charitiesService: CharitiesServiceProtocol
 
     private(set) var donorName: String
     private(set) var donationAmount: Int
@@ -21,7 +21,7 @@ class DonationViewModel {
 
     weak var delegate: DonationViewModelDelegate?
 
-    init(charitiesService: CharitiesService) {
+    init(charitiesService: CharitiesServiceProtocol) {
         self.charitiesService = charitiesService
 
         self.donorName = ""
