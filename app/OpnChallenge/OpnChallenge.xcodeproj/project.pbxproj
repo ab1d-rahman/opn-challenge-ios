@@ -23,6 +23,8 @@
 		8185011F25C0A3F500436315 /* DonationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185011E25C0A3F500436315 /* DonationViewModel.swift */; };
 		8185012125C0B54200436315 /* DonationSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185012025C0B54200436315 /* DonationSuccessViewController.swift */; };
 		8185012425C0BB4A00436315 /* UIAlertController+MakeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185012325C0BB4A00436315 /* UIAlertController+MakeAlert.swift */; };
+		81C0814325C19771005B2CD2 /* CharitiesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0814225C19771005B2CD2 /* CharitiesViewModelTests.swift */; };
+		81C0814825C1986C005B2CD2 /* MockCharitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0814725C1986C005B2CD2 /* MockCharitiesService.swift */; };
 		81C52E5225BD9FC100B91F8F /* CharitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */; };
 		81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */; };
 		81C52E6525BDACC600B91F8F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E6425BDACC600B91F8F /* HTTPClient.swift */; };
@@ -34,6 +36,16 @@
 		81C52E7F25BDCFB700B91F8F /* CharitiesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E7E25BDCFB700B91F8F /* CharitiesCellViewModel.swift */; };
 		81E9D90F25C12FEB00780AEC /* String+Trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9D90E25C12FEB00780AEC /* String+Trimming.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81C0813725C196CB005B2CD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8141AD2225BD820000523BC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8141AD2925BD820000523BC0;
+			remoteInfo = OpnChallenge;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		814BB22125BFE36E00B8ABF8 /* Embed Frameworks */ = {
@@ -69,6 +81,10 @@
 		8185011E25C0A3F500436315 /* DonationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewModel.swift; sourceTree = "<group>"; };
 		8185012025C0B54200436315 /* DonationSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationSuccessViewController.swift; sourceTree = "<group>"; };
 		8185012325C0BB4A00436315 /* UIAlertController+MakeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+MakeAlert.swift"; sourceTree = "<group>"; };
+		81C0813225C196CB005B2CD2 /* OpnChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpnChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C0813625C196CB005B2CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81C0814225C19771005B2CD2 /* CharitiesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModelTests.swift; sourceTree = "<group>"; };
+		81C0814725C1986C005B2CD2 /* MockCharitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharitiesService.swift; sourceTree = "<group>"; };
 		81C52E5125BD9FC100B91F8F /* CharitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewController.swift; sourceTree = "<group>"; };
 		81C52E5525BDA19100B91F8F /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
 		81C52E6425BDACC600B91F8F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -91,6 +107,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81C0812F25C196CB005B2CD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8141AD2C25BD820000523BC0 /* OpnChallenge */,
+				81C0813325C196CB005B2CD2 /* OpnChallengeTests */,
 				8141AD2B25BD820000523BC0 /* Products */,
 				00079560A92D95EBD4FE6D4A /* Pods */,
 				C71F339BF96CF1CCB45F8CC9 /* Frameworks */,
@@ -117,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				8141AD2A25BD820000523BC0 /* OpnChallenge.app */,
+				81C0813225C196CB005B2CD2 /* OpnChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +175,32 @@
 				8185012325C0BB4A00436315 /* UIAlertController+MakeAlert.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		81C0813325C196CB005B2CD2 /* OpnChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				81C0814625C1985D005B2CD2 /* MockServices */,
+				81C0814525C1983E005B2CD2 /* ViewModels */,
+				81C0813625C196CB005B2CD2 /* Info.plist */,
+			);
+			path = OpnChallengeTests;
+			sourceTree = "<group>";
+		};
+		81C0814525C1983E005B2CD2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				81C0814225C19771005B2CD2 /* CharitiesViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		81C0814625C1985D005B2CD2 /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				81C0814725C1986C005B2CD2 /* MockCharitiesService.swift */,
+			);
+			path = MockServices;
 			sourceTree = "<group>";
 		};
 		81C52E4B25BD9F2400B91F8F /* ViewControllers */ = {
@@ -257,6 +308,24 @@
 			productReference = 8141AD2A25BD820000523BC0 /* OpnChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
+		81C0813125C196CB005B2CD2 /* OpnChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81C0813B25C196CB005B2CD2 /* Build configuration list for PBXNativeTarget "OpnChallengeTests" */;
+			buildPhases = (
+				81C0812E25C196CB005B2CD2 /* Sources */,
+				81C0812F25C196CB005B2CD2 /* Frameworks */,
+				81C0813025C196CB005B2CD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81C0813825C196CB005B2CD2 /* PBXTargetDependency */,
+			);
+			name = OpnChallengeTests;
+			productName = OpnChallengeTests;
+			productReference = 81C0813225C196CB005B2CD2 /* OpnChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -268,6 +337,11 @@
 				TargetAttributes = {
 					8141AD2925BD820000523BC0 = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					81C0813125C196CB005B2CD2 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+						TestTargetID = 8141AD2925BD820000523BC0;
 					};
 				};
 			};
@@ -285,6 +359,7 @@
 			projectRoot = "";
 			targets = (
 				8141AD2925BD820000523BC0 /* OpnChallenge */,
+				81C0813125C196CB005B2CD2 /* OpnChallengeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,6 +373,13 @@
 				814BB21325BF0F7600B8ABF8 /* Localizable.strings in Resources */,
 				8141AD3725BD820000523BC0 /* Assets.xcassets in Resources */,
 				8141AD3525BD820000523BC0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81C0813025C196CB005B2CD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +473,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81C0812E25C196CB005B2CD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81C0814825C1986C005B2CD2 /* MockCharitiesService.swift in Sources */,
+				81C0814325C19771005B2CD2 /* CharitiesViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81C0813825C196CB005B2CD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8141AD2925BD820000523BC0 /* OpnChallenge */;
+			targetProxy = 81C0813725C196CB005B2CD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8141AD3325BD820000523BC0 /* Main.storyboard */ = {
@@ -577,6 +676,51 @@
 			};
 			name = Release;
 		};
+		81C0813925C196CB005B2CD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RS29XNDB6R;
+				INFOPLIST_FILE = OpnChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abid.OpnChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpnChallenge.app/OpnChallenge";
+			};
+			name = Debug;
+		};
+		81C0813A25C196CB005B2CD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RS29XNDB6R;
+				INFOPLIST_FILE = OpnChallengeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abid.OpnChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpnChallenge.app/OpnChallenge";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -594,6 +738,15 @@
 			buildConfigurations = (
 				8141AD3F25BD820000523BC0 /* Debug */,
 				8141AD4025BD820000523BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81C0813B25C196CB005B2CD2 /* Build configuration list for PBXNativeTarget "OpnChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81C0813925C196CB005B2CD2 /* Debug */,
+				81C0813A25C196CB005B2CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

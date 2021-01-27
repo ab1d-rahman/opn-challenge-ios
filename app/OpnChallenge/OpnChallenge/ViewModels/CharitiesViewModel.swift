@@ -13,12 +13,12 @@ protocol CharitiesViewModelDelegate: NSObjectProtocol {
 }
 
 class CharitiesViewModel {
-    private let charitiesService: CharitiesService
+    private let charitiesService: CharitiesServiceProtocol
     private var cellViewModels: [CharitiesCellViewModel]
 
     weak var delegate: CharitiesViewModelDelegate?
 
-    init(charitiesService: CharitiesService) {
+    init(charitiesService: CharitiesServiceProtocol) {
         self.charitiesService = charitiesService
         self.cellViewModels = [CharitiesCellViewModel]()
     }

@@ -7,7 +7,12 @@
 
 import Foundation
 
-public class CharitiesService {
+protocol CharitiesServiceProtocol {
+    func fetchCharities(completion: @escaping ([Charity]?, HTTPClientError?) -> Void)
+    func makeDonation(usingName name: String, usingAmountInSatang amount: Int, usingCreditCardToken token: String, completion: @escaping (MakeDonationResponseModel?, HTTPClientError?) -> Void)
+}
+
+class CharitiesService: CharitiesServiceProtocol {
     private let httpClient: HTTPClient
 
     init(httpClient: HTTPClient) {
