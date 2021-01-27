@@ -32,6 +32,7 @@
 		81C52E7725BDC19600B91F8F /* URLResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E7625BDC19600B91F8F /* URLResolver.swift */; };
 		81C52E7C25BDCDCE00B91F8F /* CharitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E7B25BDCDCE00B91F8F /* CharitiesTableViewCell.swift */; };
 		81C52E7F25BDCFB700B91F8F /* CharitiesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C52E7E25BDCFB700B91F8F /* CharitiesCellViewModel.swift */; };
+		81E9D90F25C12FEB00780AEC /* String+Trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9D90E25C12FEB00780AEC /* String+Trimming.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,7 @@
 		81C52E7625BDC19600B91F8F /* URLResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResolver.swift; sourceTree = "<group>"; };
 		81C52E7B25BDCDCE00B91F8F /* CharitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesTableViewCell.swift; sourceTree = "<group>"; };
 		81C52E7E25BDCFB700B91F8F /* CharitiesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesCellViewModel.swift; sourceTree = "<group>"; };
+		81E9D90E25C12FEB00780AEC /* String+Trimming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Trimming.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				814BB21625BF10C500B8ABF8 /* String+Localization.swift */,
+				81E9D90E25C12FEB00780AEC /* String+Trimming.swift */,
 				8185012325C0BB4A00436315 /* UIAlertController+MakeAlert.swift */,
 			);
 			path = Extensions;
@@ -382,6 +385,7 @@
 				81C52E6525BDACC600B91F8F /* HTTPClient.swift in Sources */,
 				81C52E5625BDA19100B91F8F /* CharitiesViewModel.swift in Sources */,
 				81C52E6925BDAF5B00B91F8F /* CharitiesService.swift in Sources */,
+				81E9D90F25C12FEB00780AEC /* String+Trimming.swift in Sources */,
 				8185012125C0B54200436315 /* DonationSuccessViewController.swift in Sources */,
 				8185012425C0BB4A00436315 /* UIAlertController+MakeAlert.swift in Sources */,
 			);

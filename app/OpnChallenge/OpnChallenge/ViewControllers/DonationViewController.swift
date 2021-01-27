@@ -11,8 +11,11 @@ import SVProgressHUD
 
 class DonationViewController: UIViewController {
     @IBOutlet weak var charityNameLabel: UILabel!
+
     @IBOutlet weak var donorNameTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
+
+    @IBOutlet weak var donateButton: UIButton!
 
     var charityName: String?
 
@@ -22,6 +25,8 @@ class DonationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.setupInputValidation()
 
         self.charityNameLabel.text = self.charityName
 
@@ -41,12 +46,38 @@ class DonationViewController: UIViewController {
         let navController = UINavigationController(rootViewController: creditCardView)
         self.present(navController, animated: true, completion: nil)
     }
+
+    private func setupInputValidation() {
+        self.updateDonateButtonAppearance(isEnabled: false)
+
+        self.donorNameTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        self.amountTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+    }
+
+    @objc private func textFieldsDidChange() {
+        let isValidInput = self.viewModel.isValidInput(name: self.donorNameTextField.text,
+                                                       amount: self.amountTextField.text)
+        if isValidInput {
+            self.viewModel.setNameAndAmount(name: self.donorNameTextField.text,
+                                            amount: self.amountTextField.text)
+        }
+
+        self.updateDonateButtonAppearance(isEnabled: isValidInput)
+
+    }
+
+    private func updateDonateButtonAppearance(isEnabled: Bool) {
+        self.donateButton.isEnabled = isEnabled
+        self.donateButton.alpha = isEnabled ? 1.0 : 0.4
+    }
 }
 
 extension DonationViewController: CreditCardFormViewControllerDelegate {
     func creditCardFormViewController(_ controller: CreditCardFormViewController, didSucceedWithToken token: Token) {
+        self.viewModel.setCardToken(token: token.id)
+
         controller.dismiss(animated: true) { [unowned self] in
-            self.viewModel.makeDonation(usingName: self.donorNameTextField.text!, usingAmount: Int(self.amountTextField.text!)!, usingCreditCardToken: token.id)
+            self.viewModel.makeDonation()
         }
     }
 

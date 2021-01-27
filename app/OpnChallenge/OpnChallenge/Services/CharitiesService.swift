@@ -16,6 +16,7 @@ public class CharitiesService {
 
     public func fetchCharities(completion: @escaping ([Charity]?, HTTPClientError?) -> Void) {
         guard let url = URLResolver.shared.resolve(using: Constants.EndPoints.charitiesList) else {
+            completion(nil, HTTPClientError(errorType: .unknown, description: nil))
             return
         }
 
@@ -29,7 +30,7 @@ public class CharitiesService {
         }
     }
 
-    public func makeDonation(usingName name: String, usingAmount amount: Int, usingCreditCardToken token: String, completion: @escaping (MakeDonationResponseModel?, HTTPClientError?) -> Void) {
+    public func makeDonation(usingName name: String, usingAmountInSatang amount: Int, usingCreditCardToken token: String, completion: @escaping (MakeDonationResponseModel?, HTTPClientError?) -> Void) {
         let requestModel = MakeDonationRequestModel(name: name, token: token, amount: amount)
 
         guard let url = URLResolver.shared.resolve(using: Constants.EndPoints.makeDonation), let requestBodyData = try? JSONEncoder().encode(requestModel) else {

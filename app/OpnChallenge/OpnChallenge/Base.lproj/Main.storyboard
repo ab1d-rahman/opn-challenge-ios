@@ -121,8 +121,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-gj-u4C">
-                                <rect key="frame" x="16" y="243.5" width="54" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount (in ฿)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-gj-u4C">
+                                <rect key="frame" x="16" y="243.5" width="94" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -173,6 +173,7 @@
                     <connections>
                         <outlet property="amountTextField" destination="J4g-TZ-36e" id="kBJ-lL-Ms5"/>
                         <outlet property="charityNameLabel" destination="xhG-Oz-XSR" id="oTs-ev-JYt"/>
+                        <outlet property="donateButton" destination="lyl-xu-Q1I" id="nd9-yu-Ext"/>
                         <outlet property="donorNameTextField" destination="iM9-9H-gBa" id="hfd-pZ-2Nz"/>
                         <segue destination="4L7-Bb-zut" kind="show" identifier="ToDonationSuccessViewController" id="aSh-q3-ghP"/>
                     </connections>

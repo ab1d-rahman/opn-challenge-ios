@@ -15,16 +15,48 @@ protocol DonationViewModelDelegate: NSObjectProtocol {
 class DonationViewModel {
     private let charitiesService: CharitiesService
 
+    private(set) var donorName: String
+    private(set) var donationAmount: Int
+    private(set) var cardToken: String
+
     weak var delegate: DonationViewModelDelegate?
 
     init(charitiesService: CharitiesService) {
         self.charitiesService = charitiesService
+
+        self.donorName = ""
+        self.donationAmount = 0
+        self.cardToken = ""
     }
 
-    public func makeDonation(usingName name: String, usingAmount amount: Int, usingCreditCardToken token: String) {
+    public func isValidInput(name: String?, amount: String?) -> Bool {
+        guard let name = name, let amount = amount else {
+            return false
+        }
+
+        return !name.containsOnlyWhiteSpaceOrNewLine() &&
+               !amount.containsOnlyWhiteSpaceOrNewLine() &&
+               Int(amount.trimmed) != nil
+    }
+
+    public func setNameAndAmount(name: String?, amount: String?) {
+        guard let name = name, let amount = amount, let amountAsInt = Int(amount.trimmed) else {
+            return
+        }
+
+        self.donorName = name.trimmed
+        self.donationAmount = amountAsInt
+    }
+
+    public func setCardToken(token: String) {
+        self.cardToken = token
+    }
+
+    public func makeDonation() {
         self.delegate?.didStartMakingDonation()
 
-        self.charitiesService.makeDonation(usingName: name, usingAmount: amount, usingCreditCardToken: token) { (responseObject, error) in
+        let donationAmountInSatang = self.donationAmount * 100
+        self.charitiesService.makeDonation(usingName: self.donorName, usingAmountInSatang: donationAmountInSatang, usingCreditCardToken: self.cardToken) { (responseObject, error) in
             if let error = error {
                 self.delegate?.didFinishMakingDonation(errorMessage: error.errorMessage)
                 return
