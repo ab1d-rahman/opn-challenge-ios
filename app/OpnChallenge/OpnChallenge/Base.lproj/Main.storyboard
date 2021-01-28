@@ -17,25 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zT9-Tz-BDT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zT9-Tz-BDT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CharitiesTableViewCell" id="nhd-LU-ZpC" customClass="CharitiesTableViewCell" customModule="OpnChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="134.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nhd-LU-ZpC" id="HVa-Dr-Q9i">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="134.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lza-yt-7wW">
-                                                    <rect key="frame" x="197.5" y="57" width="200.5" height="20.5"/>
+                                                    <rect key="frame" x="199.5" y="57.5" width="198.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-Ug-EsX" customClass="AnimatedImageView" customModule="Kingfisher">
-                                                    <rect key="frame" x="16" y="16" width="165.5" height="102.5"/>
+                                                    <rect key="frame" x="16" y="16" width="167.5" height="103"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zjE-Ug-EsX" secondAttribute="height" multiplier="450:277" id="pqH-9m-d23"/>
                                                     </constraints>
@@ -45,7 +45,6 @@
                                                 <constraint firstItem="lza-yt-7wW" firstAttribute="centerY" secondItem="zjE-Ug-EsX" secondAttribute="centerY" id="0T8-PP-5Rs"/>
                                                 <constraint firstAttribute="trailing" secondItem="lza-yt-7wW" secondAttribute="trailing" constant="16" id="3PD-Br-nIH"/>
                                                 <constraint firstAttribute="bottom" secondItem="zjE-Ug-EsX" secondAttribute="bottom" constant="16" id="4dt-X0-epa"/>
-                                                <constraint firstItem="zjE-Ug-EsX" firstAttribute="width" secondItem="HVa-Dr-Q9i" secondAttribute="width" multiplier="0.4" id="AcQ-0B-Jyq"/>
                                                 <constraint firstItem="zjE-Ug-EsX" firstAttribute="top" secondItem="HVa-Dr-Q9i" secondAttribute="top" constant="16" id="IQn-ET-g8N"/>
                                                 <constraint firstItem="lza-yt-7wW" firstAttribute="leading" secondItem="zjE-Ug-EsX" secondAttribute="trailing" constant="16" id="g8g-lm-fG7"/>
                                                 <constraint firstItem="zjE-Ug-EsX" firstAttribute="leading" secondItem="HVa-Dr-Q9i" secondAttribute="leading" constant="16" id="qCJ-px-mWW"/>
@@ -103,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donor's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slU-fI-2vH">
-                                <rect key="frame" x="16" y="155.5" width="98" height="18"/>
+                                <rect key="frame" x="16" y="155.5" width="382" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -122,7 +121,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount (in ฿)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-gj-u4C">
-                                <rect key="frame" x="16" y="243.5" width="94" height="18"/>
+                                <rect key="frame" x="16" y="243.5" width="382" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -163,10 +162,12 @@
                             <constraint firstItem="m1S-gj-u4C" firstAttribute="leading" secondItem="iM9-9H-gBa" secondAttribute="leading" id="Wyf-4l-OJL"/>
                             <constraint firstItem="xhG-Oz-XSR" firstAttribute="leading" secondItem="lDT-rB-jfW" secondAttribute="leading" constant="16" id="Yk7-pb-n9p"/>
                             <constraint firstItem="lDT-rB-jfW" firstAttribute="trailing" secondItem="iM9-9H-gBa" secondAttribute="trailing" constant="16" id="ZAY-Tt-32t"/>
+                            <constraint firstItem="slU-fI-2vH" firstAttribute="trailing" secondItem="iM9-9H-gBa" secondAttribute="trailing" id="ZE9-LD-Bsz"/>
                             <constraint firstItem="J4g-TZ-36e" firstAttribute="height" secondItem="iM9-9H-gBa" secondAttribute="height" id="lh0-9i-jkQ"/>
                             <constraint firstItem="J4g-TZ-36e" firstAttribute="trailing" secondItem="iM9-9H-gBa" secondAttribute="trailing" id="m8O-96-7l4"/>
                             <constraint firstItem="xhG-Oz-XSR" firstAttribute="top" secondItem="lDT-rB-jfW" secondAttribute="top" constant="16" id="nHb-Sj-BEv"/>
                             <constraint firstItem="iM9-9H-gBa" firstAttribute="leading" secondItem="slU-fI-2vH" secondAttribute="leading" id="xdg-17-Ly9"/>
+                            <constraint firstItem="m1S-gj-u4C" firstAttribute="trailing" secondItem="J4g-TZ-36e" secondAttribute="trailing" id="yZX-fh-1oQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Make Donation" id="Bt9-QT-sYa"/>
