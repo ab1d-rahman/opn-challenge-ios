@@ -22,7 +22,7 @@ class CharitiesService: CharitiesServiceProtocol {
 
     public func fetchCharities(completion: @escaping ([Charity]?, HTTPClientError?) -> Void) {
         guard let url = URLResolver.shared.resolve(using: Constants.EndPoints.charitiesList) else {
-            completion(nil, HTTPClientError(errorType: .unknown, description: nil))
+            completion(nil, HTTPClientError(errorType: .unknown, description: "Failed to resolve URL"))
             return
         }
 
@@ -40,7 +40,7 @@ class CharitiesService: CharitiesServiceProtocol {
         let requestModel = MakeDonationRequestModel(name: name, token: token, amount: amount)
 
         guard let url = URLResolver.shared.resolve(using: Constants.EndPoints.makeDonation), let requestBodyData = try? JSONEncoder().encode(requestModel) else {
-            completion(nil, HTTPClientError(errorType: .unknown, description: nil))
+            completion(nil, HTTPClientError(errorType: .unknown, description: "Failed to resolve URL or encode request body"))
             return
         }
 

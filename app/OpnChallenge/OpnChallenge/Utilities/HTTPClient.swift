@@ -54,7 +54,7 @@ class HTTPClient {
                 completion(.failure(HTTPClientError(errorType: .unknown, description: error.localizedDescription)))
             } else if let data = data, data.count != 0 {
                 guard let statusCode = statusCode else {
-                    completion(.failure(HTTPClientError(errorType: .unknown, description: nil)))
+                    completion(.failure(HTTPClientError(errorType: .unknown, description: "Response status code not found.")))
                     return
                 }
 
