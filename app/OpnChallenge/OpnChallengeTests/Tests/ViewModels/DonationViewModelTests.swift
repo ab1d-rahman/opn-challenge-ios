@@ -49,6 +49,20 @@ class DonationViewModelTests: XCTestCase {
         XCTAssertFalse(self.sut.isValidInput(name: name, amount: amount))
     }
 
+    func testIsValidInputWhenAmountStringIsZero() {
+        let name = "A"
+        let amount = "0"
+
+        XCTAssertFalse(self.sut.isValidInput(name: name, amount: amount))
+    }
+
+    func testIsValidInputWhenAmountStringIsNegativeInteger() {
+        let name = "A"
+        let amount = "-100"
+
+        XCTAssertFalse(self.sut.isValidInput(name: name, amount: amount))
+    }
+
     func testIsValidInputWhenNameAndAmountAreNotEmptyAndAmountStringIsInteger() {
         let name = "  A"
         let amount = "10  "

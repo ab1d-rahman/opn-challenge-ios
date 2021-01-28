@@ -31,13 +31,13 @@ class DonationViewModel {
     }
 
     public func isValidInput(name: String?, amount: String?) -> Bool {
-        guard let name = name, let amount = amount else {
+        guard let name = name, let amount = amount, let amountAsInt = Int(amount.trimmed) else {
             return false
         }
 
         return !name.containsOnlyWhiteSpaceOrNewLine() &&
                !amount.containsOnlyWhiteSpaceOrNewLine() &&
-               Int(amount.trimmed) != nil
+               amountAsInt > 0
     }
 
     public func setNameAndAmount(name: String?, amount: String?) {
