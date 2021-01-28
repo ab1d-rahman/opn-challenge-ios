@@ -24,6 +24,7 @@ public struct Constants {
 
     public struct HTTPStatusCodes {
         static let ok = 200
+        static let badRequest = 400
         static let serverError = 500
     }
 }

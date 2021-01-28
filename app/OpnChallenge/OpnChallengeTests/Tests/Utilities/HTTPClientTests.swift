@@ -94,7 +94,30 @@ class HTTPClientTests: XCTestCase {
         }
     }
 
-    func testGetRequestWhenErrorResponseFailure() {
+    func testGetRequestWhen400ErrorResponseFailure() {
+        let expectedResponseObject = IncorrectTestModel(namee: "name", age: 30)
+
+        let responseData = try? JSONEncoder().encode(expectedResponseObject)
+        let httpResponse = HTTPURLResponse(url: self.dummyURL,
+                                           statusCode: 400,
+                                           httpVersion: nil,
+                                           headerFields: nil)
+        self.mockURLSession.completionHandlerData = (responseData, httpResponse, nil)
+
+        let expectedHTTPClientError = HTTPClientError(errorType: .errorResponse(400), description: nil)
+
+        self.sut.getRequest(requestURL: self.dummyURL, responseModelType: TestModel.self) { (result) in
+            switch result {
+            case .success(_):
+                XCTFail()
+            case .failure(let error):
+                XCTAssertEqual(error.errorType, expectedHTTPClientError.errorType)
+                XCTAssertEqual(error.errorMessage, expectedHTTPClientError.errorMessage)
+            }
+        }
+    }
+
+    func testGetRequestWhen500ErrorResponseFailure() {
         let expectedResponseObject = IncorrectTestModel(namee: "name", age: 30)
 
         let responseData = try? JSONEncoder().encode(expectedResponseObject)
@@ -199,7 +222,30 @@ class HTTPClientTests: XCTestCase {
         }
     }
 
-    func testPostRequestWhenErrorResponseFailure() {
+    func testPostRequestWhen400ErrorResponseFailure() {
+        let expectedResponseObject = IncorrectTestModel(namee: "name", age: 30)
+
+        let responseData = try? JSONEncoder().encode(expectedResponseObject)
+        let httpResponse = HTTPURLResponse(url: self.dummyURL,
+                                           statusCode: 400,
+                                           httpVersion: nil,
+                                           headerFields: nil)
+        self.mockURLSession.completionHandlerData = (responseData, httpResponse, nil)
+
+        let expectedHTTPClientError = HTTPClientError(errorType: .errorResponse(400), description: nil)
+
+        self.sut.postRequest(requestURL: self.dummyURL, requestBodyData: Data(), responseModelType: TestModel.self) { (result) in
+            switch result {
+            case .success(_):
+                XCTFail()
+            case .failure(let error):
+                XCTAssertEqual(error.errorType, expectedHTTPClientError.errorType)
+                XCTAssertEqual(error.errorMessage, expectedHTTPClientError.errorMessage)
+            }
+        }
+    }
+
+    func testPostRequestWhen500ErrorResponseFailure() {
         let expectedResponseObject = IncorrectTestModel(namee: "name", age: 30)
 
         let responseData = try? JSONEncoder().encode(expectedResponseObject)

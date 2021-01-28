@@ -2,5 +2,7 @@
 "Server unreachable error message" = "Server unreachable. Please try again later.";
 "Server error message" = "Server error. Please try again later.";
 "Something went wrong message" = "Something went wrong. Please try again later.";
+"Bad request message" = "Bad request. Please try again later.";
+"Invalid response message" = "Invalid response from server. Please try again later.";
 "OK" = "OK";
 "Error" = "Error";
