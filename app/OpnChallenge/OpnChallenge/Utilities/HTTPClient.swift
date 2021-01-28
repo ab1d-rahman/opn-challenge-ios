@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class HTTPClient {
+class HTTPClient {
     public typealias Success<T: Decodable> = (responseObject: T?, statusCode: Int?)
 
     private let urlSession: URLSessionProtocol

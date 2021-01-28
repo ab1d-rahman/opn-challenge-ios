@@ -7,8 +7,9 @@
 
 import Foundation
 
-protocol DonationViewModelDelegate: NSObjectProtocol {
+protocol DonationViewModelDelegate: AnyObject {
     func didStartMakingDonation()
+
     func didFinishMakingDonation(errorMessage: String?)
 }
 

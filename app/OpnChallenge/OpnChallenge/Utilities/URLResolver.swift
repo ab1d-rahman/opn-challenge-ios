@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class URLResolver {
+class URLResolver {
     public static let shared = URLResolver()
 
     private let baseURL = "http://192.168.1.14:8080/"

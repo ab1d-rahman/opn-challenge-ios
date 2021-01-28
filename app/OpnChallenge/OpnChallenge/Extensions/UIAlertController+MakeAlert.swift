@@ -9,9 +9,9 @@ import UIKit
 
 extension UIAlertController {
     static func makeAlert(title: String? = nil,
-                                message: String? = nil,
-                                buttonTitle: String = "OK".localized,
-                                buttonActionHandler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+                          message: String? = nil,
+                          buttonTitle: String = "OK".localized,
+                          buttonActionHandler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: buttonTitle, style: .default, handler: buttonActionHandler)
         alert.addAction(okAction)

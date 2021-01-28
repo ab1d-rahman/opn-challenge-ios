@@ -29,19 +29,19 @@ class CharitiesViewController: UIViewController {
         self.viewModel.fetchCharities()
     }
 
-    private func setupTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-
-        self.tableView.tableFooterView = UIView()
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let donationViewController = segue.destination as? DonationViewController,
            let selectedRow = self.selectedRow {
             let selectedCharityName = self.viewModel.getCellViewModel(at: selectedRow).name
             donationViewController.charityName = selectedCharityName
         }
+    }
+
+    private func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+
+        self.tableView.tableFooterView = UIView()
     }
 }
 

@@ -7,8 +7,9 @@
 
 import Foundation
 
-protocol CharitiesViewModelDelegate: NSObjectProtocol {
+protocol CharitiesViewModelDelegate: AnyObject {
     func didStartFetchingCharities()
+
     func didFinishFetchingCharities(errorMessage: String?)
 }
 
